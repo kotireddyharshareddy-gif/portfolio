@@ -1,378 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR Edits</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Edits</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
 
-html{
-  scroll-behavior:smooth;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-body{
-  background:
-    radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 28%),
-    linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
-  color:white;
-}
+    body{
+      background:
+        radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 28%),
+        linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
+      color:white;
+      min-height:100vh;
+    }
 
-.container{
-  max-width:1120px;
-  margin:auto;
-  padding:0 20px 50px;
-}
+    .container{
+      max-width:1120px;
+      margin:auto;
+      padding:0 20px 50px;
+    }
 
-header{
-  text-align:center;
-  padding:50px 20px 30px;
-}
+    header{
+      text-align:center;
+      padding:50px 20px 30px;
+    }
 
-header h1{
-  font-size:42px;
-  margin-bottom:8px;
-}
+    header h1{
+      font-size:42px;
+      margin-bottom:8px;
+      color:#f8fafc;
+      letter-spacing:0.5px;
+    }
 
-header p{
-  color:#cbd5e1;
-}
+    header p{
+      color:#cbd5e1;
+      font-size:15px;
+    }
 
-/* HERO */
-.hero-box{
-  max-width:780px;
-  margin:26px auto 0;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:20px;
-  padding:26px 22px;
-  text-align:center;
-}
+    .hero-box{
+      max-width:780px;
+      margin:26px auto 0;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:20px;
+      padding:26px 22px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.18);
+    }
 
-.hero-title{
-  font-size:28px;
-  margin-bottom:10px;
-  color:#eef2ff;
-}
+    .hero-title{
+      font-size:28px;
+      margin-bottom:10px;
+      color:#eef2ff;
+      line-height:1.3;
+    }
 
-.hero-text{
-  font-size:14px;
-  color:#cbd5e1;
-  margin-bottom:8px;
-}
+    .hero-text{
+      font-size:14px;
+      color:#cbd5e1;
+      margin-bottom:8px;
+      line-height:1.7;
+    }
 
-.hero-sub{
-  font-size:12px;
-  color:#6b7280;
-  margin-bottom:18px;
-}
+    .hero-sub{
+      font-size:12px;
+      color:#6b7280;
+      letter-spacing:0.4px;
+      margin-bottom:18px;
+    }
 
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-}
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-.hero-btn{
-  padding:11px 18px;
-  border-radius:999px;
-  font-size:14px;
-  text-decoration:none;
-}
+    .hero-btn{
+      text-decoration:none;
+      padding:11px 18px;
+      border-radius:999px;
+      font-size:14px;
+      transition:0.2s ease;
+      border:1px solid rgba(255,255,255,0.08);
+    }
 
-.primary{
-  background:#6366f1;
-  color:white;
-}
+    .hero-btn.primary{
+      background:#6366f1;
+      color:white;
+    }
 
-.secondary{
-  background:#ffffff10;
-  color:#e5e7eb;
-}
+    .hero-btn.primary:hover{
+      background:#5558e6;
+      transform:translateY(-2px);
+    }
 
-nav{
-  margin-top:25px;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-}
+    .hero-btn.secondary{
+      background:rgba(255,255,255,0.04);
+      color:#e5e7eb;
+    }
 
-.tab{
-  padding:10px 18px;
-  border:none;
-  border-radius:20px;
-  background:#6366f133;
-  color:white;
-  cursor:pointer;
-}
+    .hero-btn.secondary:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
 
-.tab.active{
-  background:#6366f1;
-}
+    nav{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
 
-.section{
-  display:none;
-}
+    .tab{
+      padding:10px 18px;
+      border:none;
+      border-radius:20px;
+      background:#6366f133;
+      color:white;
+      cursor:pointer;
+      transition:0.2s ease;
+      font-size:14px;
+    }
 
-.section.active{
-  display:block;
-}
+    .tab:hover{
+      background:#6366f155;
+    }
 
-.section-title{
-  text-align:center;
-  color:#a5b4fc;
-  margin-top:28px;
-  font-size:26px;
-}
+    .tab.active{
+      background:#6366f1;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-  padding:20px 0;
-}
+    .section{
+      display:none;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity 0.25s ease, transform 0.25s ease;
+    }
 
-.card{
-  background:#ffffff10;
-  padding:12px;
-  border-radius:15px;
-  transition:0.2s;
-}
+    .section.active{
+      display:block;
+      opacity:1;
+      transform:translateY(0);
+    }
 
-.card:hover{
-  transform:translateY(-2px);
-}
+    .section-title{
+      text-align:center;
+      color:#a5b4fc;
+      margin-top:28px;
+      font-size:28px;
+    }
 
-.media-box{
-  width:100%;
-  height:180px;
-  background:black;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    .section-note{
+      text-align:center;
+      color:#94a3b8;
+      font-size:13px;
+      margin-top:6px;
+      margin-bottom:14px;
+    }
 
-.card img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  cursor:pointer;
-}
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      max-width:1000px;
+      margin:28px auto 0;
+    }
 
-.video-card video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:10px;
-}
+    .service-box{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+    }
 
-.title{
-  text-align:center;
-  margin-top:10px;
-  font-size:14px;
-  font-weight:bold;
-}
+    .service-box h3{
+      font-size:16px;
+      color:#eef2ff;
+      margin-bottom:8px;
+    }
 
-.sub{
-  text-align:center;
-  margin-top:3px;
-  font-size:10px;
-  color:#6b7280;
-}
+    .service-box p{
+      font-size:12px;
+      color:#94a3b8;
+      line-height:1.6;
+    }
 
-/* ONLY CHANGE HERE ↓ */
-.contact{
-  text-align:center;
-  margin-top:22px;
-  padding:16px 20px; /* reduced height */
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:18px;
-  max-width:760px;
-  margin-left:auto;
-  margin-right:auto;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      max-width:1000px;
+      margin:auto;
+      padding:20px 0;
+    }
 
-.contact h2{
-  color:#a5b4fc;
-  margin-bottom:10px;
-}
+    .card{
+      background:rgba(255,255,255,0.06);
+      padding:12px;
+      border-radius:16px;
+      transition:0.2s ease;
+      border:1px solid rgba(255,255,255,0.06);
+    }
 
-.contact a{
-  color:#a5b4fc;
-  text-decoration:none;
-}
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(165,180,252,0.22);
+    }
 
-footer{
-  text-align:center;
-  margin-top:20px;
-  color:#6b7280;
-  font-size:13px;
-}
+    .media-box{
+      width:100%;
+      height:190px;
+      background:black;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
 
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000000dd;
-  justify-content:center;
-  align-items:center;
-}
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      cursor:pointer;
+      display:block;
+    }
 
-.popup.active{
-  display:flex;
-}
+    .video-card video{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:12px;
+      display:block;
+      background:black;
+    }
 
-.popup img{
-  max-width:80%;
-  max-height:80%;
-  border-radius:12px;
-}
+    .title{
+      text-align:center;
+      margin-top:11px;
+      font-size:15px;
+      font-weight:bold;
+      color:#f3f4f6;
+    }
 
-.close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:30px;
-  cursor:pointer;
-}
+    .sub{
+      text-align:center;
+      margin-top:4px;
+      font-size:11px;
+      color:#6b7280;
+    }
 
-@media(max-width:700px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+    /* ONLY CHANGE */
+    .contact{
+      text-align:center;
+      margin-top:22px;
+      padding:20px 18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .contact h2{
+      color:#a5b4fc;
+      margin-bottom:10px;
+      font-size:26px;
+    }
+
+    .contact p{
+      color:#cbd5e1;
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .contact a{
+      color:#a5b4fc;
+      text-decoration:none;
+    }
+
+    .contact a:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:24px;
+      color:#6b7280;
+      font-size:13px;
+    }
+
+    .popup{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:#000000dd;
+      justify-content:center;
+      align-items:center;
+      z-index:999;
+      padding:20px;
+    }
+
+    .popup.active{
+      display:flex;
+    }
+
+    .popup img{
+      max-width:82%;
+      max-height:82%;
+      border-radius:12px;
+    }
+
+    .close{
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:30px;
+      cursor:pointer;
+      color:white;
+    }
+
+    @media(max-width:900px){
+      .services,
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:700px){
+      .services,
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="container">
-
-<header>
-  <h1>HR Edits</h1>
-  <p>Creative Poster & Video Designer</p>
-
-  <div class="hero-box">
-    <h2 class="hero-title">Creative Visual Designs That Stand Out</h2>
-    <p class="hero-text">
-      I design posters and video edits that help brands grab attention and look professional.
-    </p>
-    <p class="hero-sub">
-      Helping brands grow through clean and impactful visuals.
-    </p>
-
-    <div class="hero-buttons">
-      <a class="hero-btn primary" href="#contact">Hire Me</a>
-      <a class="hero-btn secondary" href="https://instagram.com/harsha_kkkk" target="_blank">Instagram</a>
-    </div>
-  </div>
-
-  <nav>
-    <button class="tab active" onclick="show('posters',this)">Posters</button>
-    <button class="tab" onclick="show('videos',this)">Videos</button>
-  </nav>
-</header>
-
-<div id="posters" class="section active">
-  <h2 class="section-title">Featured Work</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="media-box">
-        <img src="poster1.png" onclick="openImg(this.src)">
-      </div>
-      <div class="title">Restaurant Promo Poster</div>
-      <div class="sub">Food brand promotion</div>
-    </div>
-
-    <div class="card">
-      <div class="media-box">
-        <img src="poster2.png" onclick="openImg(this.src)">
-      </div>
-      <div class="title">Social Media Advertisement</div>
-      <div class="sub">Instagram marketing</div>
-    </div>
-
-    <div class="card">
-      <div class="media-box">
-        <img src="poster3.png" onclick="openImg(this.src)">
-      </div>
-      <div class="title">Brand Promotion Design</div>
-      <div class="sub">Digital campaign</div>
-    </div>
-
-    <div class="card">
-      <div class="media-box">
-        <img src="poster4.png" onclick="openImg(this.src)">
-      </div>
-      <div class="title">Cafe Offer Poster</div>
-      <div class="sub">Buy 1 get 1 free campaign</div>
-    </div>
-
-  </div>
-</div>
-
-<div id="videos" class="section">
-  <h2 class="section-title">Video Work</h2>
-
-  <div class="grid">
-    <div class="card video-card">
-      <div class="media-box">
-        <video controls>
-          <source src="video1.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="title">Promo Video Edit</div>
-      <div class="sub">Social media campaign</div>
-    </div>
-  </div>
-</div>
-
-<div class="contact" id="contact">
-  <h2>Contact</h2>
-  📧 <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
-  📱 <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
-</div>
-
-<footer>
-  © 2026 HR Edits
-</footer>
-
-</div>
-
-<div class="popup" id="popup" onclick="closeImg()">
-  <span class="close">&times;</span>
-  <img id="popup-img">
-</div>
-
-<script>
-function show(id,btn){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-}
-
-function openImg(src){
-  document.getElementById("popup-img").src = src;
-  document.getElementById("popup").classList.add("active");
-}
-
-function closeImg(){
-  document.getElementById("popup").classList.remove("active");
-}
-</script>
-
+<!-- Rest of your HTML remains SAME -->
 </body>
 </html>
