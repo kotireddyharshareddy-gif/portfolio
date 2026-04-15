@@ -1,264 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR Edits</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Edits</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    html{
-      scroll-behavior:smooth;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    body{
-      background:
-        radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 28%),
-        linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
-      color:white;
-    }
+body{
+  background:
+    radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 28%),
+    linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
+  color:white;
+}
 
-    .container{
-      max-width:1120px;
-      margin:auto;
-      padding:0 20px 50px;
-    }
+.container{
+  max-width:1120px;
+  margin:auto;
+  padding:0 20px 50px;
+}
 
-    header{
-      text-align:center;
-      padding:50px 20px 30px;
-    }
+header{
+  text-align:center;
+  padding:50px 20px 30px;
+}
 
-    header h1{
-      font-size:42px;
-      margin-bottom:8px;
-    }
+header h1{
+  font-size:42px;
+  margin-bottom:8px;
+}
 
-    header p{
-      color:#cbd5e1;
-    }
+header p{
+  color:#cbd5e1;
+}
 
-    /* HERO */
-    .hero-box{
-      max-width:780px;
-      margin:26px auto 0;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.07);
-      border-radius:20px;
-      padding:22px;
-      text-align:center;
-    }
+/* HERO */
+.hero-box{
+  max-width:780px;
+  margin:26px auto 0;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:20px;
+  padding:26px 22px;
+  text-align:center;
+}
 
-    .hero-title{
-      font-size:26px;
-      margin-bottom:10px;
-      color:#eef2ff;
-    }
+.hero-title{
+  font-size:28px;
+  margin-bottom:10px;
+  color:#eef2ff;
+}
 
-    .hero-text{
-      font-size:14px;
-      color:#cbd5e1;
-      margin-bottom:8px;
-    }
+.hero-text{
+  font-size:14px;
+  color:#cbd5e1;
+  margin-bottom:8px;
+}
 
-    .hero-sub{
-      font-size:12px;
-      color:#6b7280;
-      margin-bottom:15px;
-    }
+.hero-sub{
+  font-size:12px;
+  color:#6b7280;
+  margin-bottom:18px;
+}
 
-    .hero-buttons{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-    }
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
 
-    .hero-btn{
-      padding:10px 16px;
-      border-radius:20px;
-      font-size:13px;
-      text-decoration:none;
-    }
+.hero-btn{
+  padding:11px 18px;
+  border-radius:999px;
+  font-size:14px;
+  text-decoration:none;
+}
 
-    .primary{
-      background:#6366f1;
-      color:white;
-    }
+.primary{
+  background:#6366f1;
+  color:white;
+}
 
-    .secondary{
-      background:#ffffff10;
-      color:#e5e7eb;
-    }
+.secondary{
+  background:#ffffff10;
+  color:#e5e7eb;
+}
 
-    nav{
-      margin-top:25px;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-    }
+nav{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
 
-    .tab{
-      padding:10px 18px;
-      border:none;
-      border-radius:20px;
-      background:#6366f133;
-      color:white;
-      cursor:pointer;
-    }
+.tab{
+  padding:10px 18px;
+  border:none;
+  border-radius:20px;
+  background:#6366f133;
+  color:white;
+  cursor:pointer;
+}
 
-    .tab.active{
-      background:#6366f1;
-    }
+.tab.active{
+  background:#6366f1;
+}
 
-    .section{
-      display:none;
-    }
+.section{
+  display:none;
+}
 
-    .section.active{
-      display:block;
-    }
+.section.active{
+  display:block;
+}
 
-    .section-title{
-      text-align:center;
-      color:#a5b4fc;
-      margin-top:28px;
-      font-size:26px;
-    }
+.section-title{
+  text-align:center;
+  color:#a5b4fc;
+  margin-top:28px;
+  font-size:26px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-      max-width:1000px;
-      margin:auto;
-      padding:20px 0;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+  padding:20px 0;
+}
 
-    .card{
-      background:#ffffff10;
-      padding:12px;
-      border-radius:15px;
-      transition:0.2s;
-    }
+.card{
+  background:#ffffff10;
+  padding:12px;
+  border-radius:15px;
+  transition:0.2s;
+}
 
-    .card:hover{
-      transform:translateY(-2px);
-    }
+.card:hover{
+  transform:translateY(-2px);
+}
 
-    .media-box{
-      width:100%;
-      height:180px;
-      background:black;
-      border-radius:10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
+.media-box{
+  width:100%;
+  height:180px;
+  background:black;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .card img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      cursor:pointer;
-    }
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+}
 
-    .video-card video{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:10px;
-    }
+.video-card video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:10px;
+}
 
-    .title{
-      text-align:center;
-      margin-top:10px;
-      font-size:14px;
-      font-weight:bold;
-    }
+.title{
+  text-align:center;
+  margin-top:10px;
+  font-size:14px;
+  font-weight:bold;
+}
 
-    .sub{
-      text-align:center;
-      margin-top:3px;
-      font-size:10px;
-      color:#6b7280;
-    }
+.sub{
+  text-align:center;
+  margin-top:3px;
+  font-size:10px;
+  color:#6b7280;
+}
 
-    /* COMPACT CONTACT */
-    .contact{
-      text-align:center;
-      margin-top:18px;
-      padding:18px 16px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:16px;
-      max-width:700px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+/* ONLY CHANGE HERE ↓ */
+.contact{
+  text-align:center;
+  margin-top:22px;
+  padding:16px 20px; /* reduced height */
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:18px;
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-    .contact h2{
-      color:#a5b4fc;
-      margin-bottom:8px;
-      font-size:22px;
-    }
+.contact h2{
+  color:#a5b4fc;
+  margin-bottom:10px;
+}
 
-    .contact p{
-      font-size:13px;
-      line-height:1.6;
-      color:#cbd5e1;
-    }
+.contact a{
+  color:#a5b4fc;
+  text-decoration:none;
+}
 
-    .contact a{
-      color:#a5b4fc;
-      text-decoration:none;
-    }
+footer{
+  text-align:center;
+  margin-top:20px;
+  color:#6b7280;
+  font-size:13px;
+}
 
-    footer{
-      text-align:center;
-      margin-top:20px;
-      color:#6b7280;
-      font-size:13px;
-    }
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000000dd;
+  justify-content:center;
+  align-items:center;
+}
 
-    .popup{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:#000000dd;
-      justify-content:center;
-      align-items:center;
-    }
+.popup.active{
+  display:flex;
+}
 
-    .popup.active{
-      display:flex;
-    }
+.popup img{
+  max-width:80%;
+  max-height:80%;
+  border-radius:12px;
+}
 
-    .popup img{
-      max-width:80%;
-      max-height:80%;
-      border-radius:12px;
-    }
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:30px;
+  cursor:pointer;
+}
 
-    .close{
-      position:absolute;
-      top:20px;
-      right:30px;
-      font-size:30px;
-      cursor:pointer;
-    }
-
-    @media(max-width:700px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -347,10 +340,8 @@
 
 <div class="contact" id="contact">
   <h2>Contact</h2>
-  <p>
-    📧 <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
-    📱 <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
-  </p>
+  📧 <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
+  📱 <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
 </div>
 
 <footer>
