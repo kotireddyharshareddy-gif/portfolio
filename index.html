@@ -22,12 +22,9 @@ body{
     radial-gradient(circle at top, rgba(99,102,241,0.25), transparent 30%),
     linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
   color:white;
-}
-
-/* FADE IN */
-body{
   animation:fadeIn 0.6s ease;
 }
+
 @keyframes fadeIn{
   from{opacity:0; transform:translateY(10px);}
   to{opacity:1; transform:translateY(0);}
@@ -48,23 +45,20 @@ header h1{
   font-size:42px;
   margin-bottom:6px;
   color:#f8fafc;
-  letter-spacing:0.5px;
 }
 
-/* MAIN TEXT */
+/* TEXT */
 .hero-text{
   font-size:15px;
   color:#cbd5e1;
   margin-top:10px;
 }
 
-/* HIGHLIGHT WORD */
 .highlight{
   color:#6366f1;
   font-weight:bold;
 }
 
-/* TAGLINE */
 .hero-sub{
   font-size:12px;
   color:#6b7280;
@@ -97,15 +91,14 @@ nav{
   background:#6366f1;
 }
 
-/* SECTION */
 .section{
   display:none;
 }
+
 .section.active{
   display:block;
 }
 
-/* TITLE */
 .section-title{
   text-align:center;
   color:#a5b4fc;
@@ -133,13 +126,11 @@ nav{
   transition:0.3s;
 }
 
-/* HOVER EFFECT */
 .card:hover{
   transform:translateY(-4px);
   border-color:#6366f1;
 }
 
-/* IMAGE BOX */
 .media-box{
   width:100%;
   height:190px;
@@ -148,7 +139,6 @@ nav{
   overflow:hidden;
 }
 
-/* IMAGE ZOOM */
 .card img{
   width:100%;
   height:100%;
@@ -161,7 +151,6 @@ nav{
   transform:scale(1.05);
 }
 
-/* VIDEO */
 .video-card video{
   width:100%;
   height:100%;
@@ -199,8 +188,13 @@ nav{
   color:#a5b4fc;
 }
 
+.contact p{
+  line-height:2.2; /* spacing increased */
+}
+
 .contact a{
   color:#6366f1;
+  text-decoration:none;
 }
 
 /* FOOTER */
@@ -316,8 +310,10 @@ footer{
 
 <div class="contact">
   <h2>Contact</h2>
-  📧 <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
-  📱 <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
+  <p>
+    📧 <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
+    📱 <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
+  </p>
 </div>
 
 <footer>
