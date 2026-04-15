@@ -15,10 +15,9 @@
 
     body{
       background:
-        radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 25%),
-        linear-gradient(180deg, #0b0b14 0%, #111827 45%, #0a0a0a 100%);
+        radial-gradient(circle at top, rgba(99,102,241,0.15), transparent 30%),
+        linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
       color:white;
-      min-height:100vh;
     }
 
     .container{
@@ -33,33 +32,47 @@
     }
 
     header h1{
-      font-size:42px;
-      letter-spacing:1px;
-      margin-bottom:10px;
+      font-size:40px;
+      margin-bottom:8px;
     }
 
     header p{
       color:#cbd5e1;
-      font-size:16px;
     }
 
+    /* HERO */
     .hero-box{
       max-width:760px;
       margin:24px auto 0;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.04);
       border-radius:18px;
-      padding:18px 20px;
-      color:#dbe4f0;
-      line-height:1.7;
+      padding:22px;
+      text-align:center;
+    }
+
+    .hero-title{
+      font-size:26px;
+      margin-bottom:10px;
+      color:#e5e7eb;
+    }
+
+    .hero-text{
+      font-size:14px;
+      color:#cbd5e1;
+      margin-bottom:8px;
+    }
+
+    .hero-sub{
+      font-size:12px;
+      color:#6b7280;
+      letter-spacing:0.5px;
     }
 
     nav{
-      margin-top:22px;
+      margin-top:25px;
       display:flex;
       justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+      gap:10px;
     }
 
     .tab{
@@ -69,8 +82,6 @@
       background:#6366f133;
       color:white;
       cursor:pointer;
-      transition:0.2s;
-      font-size:14px;
     }
 
     .tab.active{
@@ -88,33 +99,24 @@
     .section-title{
       text-align:center;
       color:#a5b4fc;
-      margin-top:10px;
-      margin-bottom:8px;
-      font-size:28px;
-    }
-
-    .section-desc{
-      text-align:center;
-      color:#94a3b8;
-      font-size:13px;
-      margin-bottom:18px;
+      margin-top:25px;
+      font-size:26px;
     }
 
     .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:22px;
+      gap:20px;
       max-width:1000px;
       margin:auto;
-      padding:10px 0 20px;
+      padding:20px 0;
     }
 
     .card{
-      background:rgba(255,255,255,0.06);
+      background:#ffffff10;
       padding:12px;
-      border-radius:16px;
+      border-radius:15px;
       transition:0.2s;
-      border:1px solid rgba(255,255,255,0.05);
     }
 
     .card:hover{
@@ -123,9 +125,9 @@
 
     .media-box{
       width:100%;
-      height:190px;
+      height:180px;
       background:black;
-      border-radius:12px;
+      border-radius:10px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -137,66 +139,45 @@
       height:100%;
       object-fit:contain;
       cursor:pointer;
-      display:block;
     }
 
     .video-card video{
       width:100%;
       height:100%;
       object-fit:contain;
-      background:black;
-      display:block;
-      border-radius:12px;
+      border-radius:10px;
     }
 
     .title{
       text-align:center;
-      margin-top:12px;
-      font-size:15px;
+      margin-top:10px;
+      font-size:14px;
       font-weight:bold;
-      color:#f3f4f6;
     }
 
     .sub{
       text-align:center;
-      margin-top:4px;
-      font-size:11px;
+      margin-top:3px;
+      font-size:10px;
       color:#6b7280;
-      letter-spacing:0.4px;
     }
 
     .contact{
-      max-width:760px;
-      margin:20px auto 0;
       text-align:center;
-      padding:28px 20px;
-      color:#cbd5e1;
-      line-height:1.9;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:18px;
+      margin-top:20px;
+      padding:25px;
+      background:#ffffff08;
+      border-radius:15px;
     }
 
     .contact h2{
       color:#a5b4fc;
       margin-bottom:10px;
-      font-size:26px;
     }
 
     .contact a{
       color:#a5b4fc;
       text-decoration:none;
-    }
-
-    .contact a:hover{
-      text-decoration:underline;
-    }
-
-    footer{
-      text-align:center;
-      color:#6b7280;
-      font-size:13px;
-      padding:25px 10px 10px;
     }
 
     .popup{
@@ -206,8 +187,6 @@
       background:#000000dd;
       justify-content:center;
       align-items:center;
-      z-index:999;
-      padding:20px;
     }
 
     .popup.active{
@@ -215,8 +194,8 @@
     }
 
     .popup img{
-      max-width:82%;
-      max-height:82%;
+      max-width:80%;
+      max-height:80%;
       border-radius:12px;
     }
 
@@ -226,7 +205,13 @@
       right:30px;
       font-size:30px;
       cursor:pointer;
-      color:white;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:20px;
+      color:#6b7280;
+      font-size:13px;
     }
 
     @media(max-width:900px){
@@ -240,136 +225,127 @@
         grid-template-columns:1fr;
       }
 
-      header h1{
-        font-size:34px;
-      }
-
-      .section-title{
-        font-size:24px;
+      .hero-title{
+        font-size:22px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <header>
-      <h1>HR Edits</h1>
-      <p>Creative Poster & Video Designer</p>
+<header>
+  <h1>HR Edits</h1>
+  <p>Creative Poster & Video Designer</p>
 
-      <div class="hero-box">
-        I create clean, eye-catching posters and short promotional video edits for social media,
-        brand campaigns, and business promotions. This portfolio showcases selected creative work.
-      </div>
-
-      <nav>
-        <button class="tab active" onclick="show('posters',this)">Posters</button>
-        <button class="tab" onclick="show('videos',this)">Videos</button>
-      </nav>
-    </header>
-
-    <div id="posters" class="section active">
-      <h2 class="section-title">Featured Work</h2>
-      <p class="section-desc">Selected poster designs from my portfolio</p>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="media-box">
-            <img src="poster1.png" alt="Restaurant Promo Poster" onclick="openImg(this.src)">
-          </div>
-          <div class="title">Restaurant Promo Poster</div>
-          <div class="sub">Food brand promotion</div>
-        </div>
-
-        <div class="card">
-          <div class="media-box">
-            <img src="poster2.png" alt="Social Media Advertisement" onclick="openImg(this.src)">
-          </div>
-          <div class="title">Social Media Advertisement</div>
-          <div class="sub">Instagram marketing</div>
-        </div>
-
-        <div class="card">
-          <div class="media-box">
-            <img src="poster3.png" alt="Brand Promotion Design" onclick="openImg(this.src)">
-          </div>
-          <div class="title">Brand Promotion Design</div>
-          <div class="sub">Digital campaign</div>
-        </div>
-
-        <div class="card">
-          <div class="media-box">
-            <img src="poster4.png" alt="Cafe Offer Poster" onclick="openImg(this.src)">
-          </div>
-          <div class="title">Cafe Offer Poster</div>
-          <div class="sub">Buy 1 get 1 free campaign</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div id="videos" class="section">
-      <h2 class="section-title">Video Work</h2>
-      <p class="section-desc">Short promotional edits and campaign videos</p>
-
-      <div class="grid">
-
-        <div class="card video-card">
-          <div class="media-box">
-            <video controls>
-              <source src="video1.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="title">Promo Video Edit</div>
-          <div class="sub">Social media campaign</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="contact">
-      <h2>Contact</h2>
-      📧 Email:
-      <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a>
-      <br>
-      📱 Instagram:
-      <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
-    </div>
-
-    <footer>
-      © 2026 HR Edits. All rights reserved.
-    </footer>
-
+  <div class="hero-box">
+    <h2 class="hero-title">Creative Visual Designs That Stand Out</h2>
+    <p class="hero-text">
+      I design posters and video edits that help brands grab attention and look professional.
+    </p>
+    <p class="hero-sub">
+      Helping brands grow through clean and impactful visuals.
+    </p>
   </div>
 
-  <div class="popup" id="popup" onclick="closeImg()">
-    <span class="close">&times;</span>
-    <img id="popup-img" alt="Preview">
+  <nav>
+    <button class="tab active" onclick="show('posters',this)">Posters</button>
+    <button class="tab" onclick="show('videos',this)">Videos</button>
+  </nav>
+</header>
+
+<div id="posters" class="section active">
+  <h2 class="section-title">Featured Work</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="media-box">
+        <img src="poster1.png" onclick="openImg(this.src)">
+      </div>
+      <div class="title">Restaurant Promo Poster</div>
+      <div class="sub">Food brand promotion</div>
+    </div>
+
+    <div class="card">
+      <div class="media-box">
+        <img src="poster2.png" onclick="openImg(this.src)">
+      </div>
+      <div class="title">Social Media Advertisement</div>
+      <div class="sub">Instagram marketing</div>
+    </div>
+
+    <div class="card">
+      <div class="media-box">
+        <img src="poster3.png" onclick="openImg(this.src)">
+      </div>
+      <div class="title">Brand Promotion Design</div>
+      <div class="sub">Digital campaign</div>
+    </div>
+
+    <div class="card">
+      <div class="media-box">
+        <img src="poster4.png" onclick="openImg(this.src)">
+      </div>
+      <div class="title">Cafe Offer Poster</div>
+      <div class="sub">Buy 1 get 1 free campaign</div>
+    </div>
+
   </div>
+</div>
 
-  <script>
-    function show(id, btn){
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
+<div id="videos" class="section">
+  <h2 class="section-title">Video Work</h2>
 
-      document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      btn.classList.add('active');
-    }
+  <div class="grid">
+    <div class="card video-card">
+      <div class="media-box">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="title">Promo Video Edit</div>
+      <div class="sub">Social media campaign</div>
+    </div>
+  </div>
+</div>
 
-    function openImg(src){
-      document.getElementById("popup-img").src = src;
-      document.getElementById("popup").classList.add("active");
-    }
+<div class="contact">
+  <h2>Contact</h2>
+  📧 Email: <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
+  📱 Instagram: <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
+</div>
 
-    function closeImg(){
-      document.getElementById("popup").classList.remove("active");
-    }
-  </script>
+<footer>
+  © 2026 HR Edits
+</footer>
+
+</div>
+
+<div class="popup" id="popup" onclick="closeImg()">
+  <span class="close">&times;</span>
+  <img id="popup-img">
+</div>
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function openImg(src){
+  document.getElementById("popup-img").src = src;
+  document.getElementById("popup").classList.add("active");
+}
+
+function closeImg(){
+  document.getElementById("popup").classList.remove("active");
+}
+</script>
+
 </body>
 </html>
