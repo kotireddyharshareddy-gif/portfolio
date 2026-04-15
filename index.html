@@ -1,257 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HR Edits</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR Edits</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
+    body{
+      background:radial-gradient(circle at top,#1e1b4b,#0a0a0a);
+      color:white;
+    }
 
-body{
-  background:radial-gradient(circle at top,#1e1b4b,#0a0a0a);
-  color:white;
-}
+    header{
+      text-align:center;
+      padding:35px 20px;
+    }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:35px 20px;
-}
+    header h1{
+      font-size:40px;
+      text-shadow:0 0 10px rgba(99,102,241,0.3);
+    }
 
-header h1{
-  font-size:40px;
-  text-shadow:0 0 10px rgba(99,102,241,0.3);
-}
+    header p{
+      color:#cbd5e1;
+      margin-top:8px;
+    }
 
-header p{
-  color:#cbd5e1;
-  margin-top:8px;
-}
+    nav{
+      margin-top:20px;
+    }
 
-/* NAV */
-nav{
-  margin-top:20px;
-}
+    .tab{
+      padding:10px 18px;
+      margin:0 8px;
+      border:none;
+      border-radius:20px;
+      background:#6366f133;
+      color:white;
+      cursor:pointer;
+      transition:0.2s;
+    }
 
-.tab{
-  padding:10px 18px;
-  margin:0 8px;
-  border:none;
-  border-radius:20px;
-  background:#6366f133;
-  color:white;
-  cursor:pointer;
-}
+    .tab.active{
+      background:#6366f1;
+    }
 
-.tab.active{
-  background:#6366f1;
-}
+    .section{
+      display:none;
+    }
 
-/* SECTIONS */
-.section{
-  display:none;
-}
+    .section.active{
+      display:block;
+    }
 
-.section.active{
-  display:block;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      max-width:1000px;
+      margin:auto;
+      padding:20px;
+    }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
-}
+    .card{
+      background:#ffffff10;
+      padding:12px;
+      border-radius:15px;
+      transition:0.2s;
+    }
 
-/* CARD */
-.card{
-  background:#ffffff10;
-  padding:12px;
-  border-radius:15px;
-  transition:0.2s;
-}
+    .card:hover{
+      transform:translateY(-2px);
+    }
 
-/* CLEAN HOVER (NO SHADOW) */
-.card:hover{
-  transform:translateY(-2px);
-}
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:contain;
+      background:black;
+      border-radius:10px;
+      cursor:pointer;
+      display:block;
+    }
 
-/* IMAGE */
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:contain;
-  background:black;
-  border-radius:10px;
-  cursor:pointer;
-}
+    .video-card video{
+      width:100%;
+      height:180px;
+      object-fit:contain;
+      background:black;
+      border-radius:10px;
+      display:block;
+    }
 
-/* VIDEO */
-.video-card video{
-  width:100%;
-  height:180px;
-  object-fit:contain;
-  background:black;
-  border-radius:10px;
-}
+    .title{
+      text-align:center;
+      margin-top:10px;
+      font-size:14px;
+      font-weight:bold;
+    }
 
-/* TEXT */
-.title{
-  text-align:center;
-  margin-top:10px;
-  font-size:14px;
-  font-weight:bold;
-}
+    .sub{
+      text-align:center;
+      margin-top:3px;
+      font-size:10px;
+      color:#6b7280;
+      letter-spacing:0.5px;
+    }
 
-.sub{
-  text-align:center;
-  margin-top:3px;
-  font-size:10px;
-  color:#6b7280;
-  letter-spacing:0.5px;
-}
+    .contact{
+      text-align:center;
+      padding:30px 20px;
+      color:#cbd5e1;
+      line-height:1.8;
+    }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-  padding:30px 20px;
-  color:#cbd5e1;
-  line-height:1.8;
-}
+    .contact h2{
+      color:#a5b4fc;
+      margin-bottom:10px;
+    }
 
-.contact h2{
-  color:#a5b4fc;
-  margin-bottom:10px;
-}
+    .contact a{
+      color:#a5b4fc;
+      text-decoration:none;
+    }
 
-/* POPUP */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:#000000dd;
-  justify-content:center;
-  align-items:center;
-}
+    .contact a:hover{
+      text-decoration:underline;
+    }
 
-.popup.active{
-  display:flex;
-}
+    .popup{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:#000000dd;
+      justify-content:center;
+      align-items:center;
+      z-index:999;
+    }
 
-.popup img{
-  max-width:80%;
-  max-height:80%;
-}
+    .popup.active{
+      display:flex;
+    }
 
-.close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:30px;
-  cursor:pointer;
-}
+    .popup img{
+      max-width:80%;
+      max-height:80%;
+      border-radius:12px;
+    }
 
-/* RESPONSIVE */
-@media(max-width:700px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+    .close{
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:30px;
+      cursor:pointer;
+      color:white;
+    }
+
+    @media(max-width:700px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      header h1{
+        font-size:32px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-  <h1>HR Edits</h1>
-  <p>Creative Poster & Video Designer</p>
+  <header>
+    <h1>HR Edits</h1>
+    <p>Creative Poster & Video Designer</p>
 
-  <nav>
-    <button class="tab active" onclick="show('posters',this)">Posters</button>
-    <button class="tab" onclick="show('videos',this)">Videos</button>
-  </nav>
-</header>
+    <nav>
+      <button class="tab active" onclick="show('posters',this)">Posters</button>
+      <button class="tab" onclick="show('videos',this)">Videos</button>
+    </nav>
+  </header>
 
-<!-- POSTERS -->
-<div id="posters" class="section active">
-  <div class="grid">
+  <div id="posters" class="section active">
+    <div class="grid">
+      <div class="card">
+        <img src="poster1.png" alt="Restaurant Promo Poster" onclick="openImg(this.src)">
+        <div class="title">Restaurant Promo Poster</div>
+        <div class="sub">Food brand promotion</div>
+      </div>
 
-    <div class="card">
-      <img src="poster1.png" onclick="openImg(this.src)">
-      <div class="title">Restaurant Promo Poster</div>
-      <div class="sub">Food brand promotion</div>
+      <div class="card">
+        <img src="poster2.png" alt="Social Media Advertisement" onclick="openImg(this.src)">
+        <div class="title">Social Media Advertisement</div>
+        <div class="sub">Instagram marketing</div>
+      </div>
+
+      <div class="card">
+        <img src="poster3.png" alt="Brand Promotion Design" onclick="openImg(this.src)">
+        <div class="title">Brand Promotion Design</div>
+        <div class="sub">Digital campaign</div>
+      </div>
     </div>
-
-    <div class="card">
-      <img src="poster2.png" onclick="openImg(this.src)">
-      <div class="title">Social Media Advertisement</div>
-      <div class="sub">Instagram marketing</div>
-    </div>
-
-    <div class="card">
-      <img src="poster3.png" onclick="openImg(this.src)">
-      <div class="title">Brand Promotion Design</div>
-      <div class="sub">Digital campaign</div>
-    </div>
-
   </div>
-</div>
 
-<!-- VIDEOS -->
-<div id="videos" class="section">
-  <div class="grid">
-
-    <div class="card video-card">
-      <video controls>
-        <source src="video1.mp4" type="video/mp4">
-      </video>
-      <div class="title">Promo Video Edit</div>
-      <div class="sub">Social media campaign</div>
+  <div id="videos" class="section">
+    <div class="grid">
+      <div class="card video-card">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+        <div class="title">Promo Video Edit</div>
+        <div class="sub">Social media campaign</div>
+      </div>
     </div>
-
   </div>
-</div>
 
-<!-- CONTACT -->
-<div class="contact">
-  <h2>Contact</h2>
-  📧 Email: kotireddyharshareddy@gmail.com <br>
-  📱 Instagram: @harsha.creates
-</div>
+  <div class="contact">
+    <h2>Contact</h2>
+    📧 Email: <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
+    📱 Instagram: <a href="https://instagram.com/harsha.creates" target="_blank">@harsha.creates</a>
+  </div>
 
-<!-- POPUP -->
-<div class="popup" id="popup" onclick="closeImg()">
-  <span class="close">&times;</span>
-  <img id="popup-img">
-</div>
+  <div class="popup" id="popup" onclick="closeImg()">
+    <span class="close">&times;</span>
+    <img id="popup-img" alt="Preview">
+  </div>
 
-<script>
-function show(id,btn){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  <script>
+    function show(id, btn){
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
 
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-}
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
 
-function openImg(src){
-  document.getElementById("popup-img").src = src;
-  document.getElementById("popup").classList.add("active");
-}
+    function openImg(src){
+      document.getElementById("popup-img").src = src;
+      document.getElementById("popup").classList.add("active");
+    }
 
-function closeImg(){
-  document.getElementById("popup").classList.remove("active");
-}
-</script>
+    function closeImg(){
+      document.getElementById("popup").classList.remove("active");
+    }
+  </script>
 
 </body>
 </html>
