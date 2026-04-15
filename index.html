@@ -77,43 +77,7 @@
       font-size:12px;
       color:#6b7280;
       letter-spacing:0.4px;
-      margin-bottom:18px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .hero-btn{
-      text-decoration:none;
-      padding:11px 18px;
-      border-radius:999px;
-      font-size:14px;
-      transition:0.2s ease;
-      border:1px solid rgba(255,255,255,0.08);
-    }
-
-    .hero-btn.primary{
-      background:#6366f1;
-      color:white;
-    }
-
-    .hero-btn.primary:hover{
-      background:#5558e6;
-      transform:translateY(-2px);
-    }
-
-    .hero-btn.secondary{
-      background:rgba(255,255,255,0.04);
-      color:#e5e7eb;
-    }
-
-    .hero-btn.secondary:hover{
-      background:rgba(255,255,255,0.08);
-      transform:translateY(-2px);
+      margin-bottom:10px;
     }
 
     nav{
@@ -264,7 +228,6 @@
       color:#6b7280;
     }
 
-    /* ONLY CHANGE */
     .contact{
       text-align:center;
       margin-top:22px;
@@ -350,7 +313,31 @@
     }
   </style>
 </head>
+
 <body>
-<!-- Rest of your HTML remains SAME -->
+<div class="container">
+
+<header>
+  <h1>HR Edits</h1>
+  <p>Creative Poster & Video Designer</p>
+
+  <div class="hero-box">
+    <h2 class="hero-title">Creative Visual Designs That Stand Out</h2>
+    <p class="hero-text">
+      I design posters and video edits that help brands grab attention and look professional.
+    </p>
+    <p class="hero-sub">
+      Helping brands grow through clean and impactful visuals.
+    </p>
+  </div>
+
+  <nav>
+    <button class="tab active" onclick="show('posters',this)">Posters</button>
+    <button class="tab" onclick="show('videos',this)">Videos</button>
+  </nav>
+</header>
+
+<!-- rest of your code stays SAME -->
+
 </body>
 </html>
