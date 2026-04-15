@@ -164,6 +164,12 @@
       color:white;
     }
 
+    @media(max-width:900px){
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
     @media(max-width:700px){
       .grid{
         grid-template-columns:1fr;
@@ -188,7 +194,6 @@
   </nav>
 </header>
 
-<!-- POSTERS -->
 <div id="posters" class="section active">
   <div class="grid">
 
@@ -210,10 +215,15 @@
       <div class="sub">Digital campaign</div>
     </div>
 
+    <div class="card">
+      <img src="poster4.png" onclick="openImg(this.src)">
+      <div class="title">Cafe Offer Poster</div>
+      <div class="sub">Buy 1 get 1 free campaign</div>
+    </div>
+
   </div>
 </div>
 
-<!-- VIDEOS -->
 <div id="videos" class="section">
   <div class="grid">
 
@@ -228,14 +238,12 @@
   </div>
 </div>
 
-<!-- CONTACT -->
 <div class="contact">
   <h2>Contact</h2>
   📧 Email: <a href="mailto:kotireddyharshareddy@gmail.com">kotireddyharshareddy@gmail.com</a><br>
   📱 Instagram: <a href="https://instagram.com/harsha_kkkk" target="_blank">@harsha_kkkk</a>
 </div>
 
-<!-- POPUP -->
 <div class="popup" id="popup" onclick="closeImg()">
   <span class="close">&times;</span>
   <img id="popup-img">
