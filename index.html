@@ -19,9 +19,18 @@ html{
 
 body{
   background:
-    radial-gradient(circle at top, rgba(99,102,241,0.18), transparent 28%),
+    radial-gradient(circle at top, rgba(99,102,241,0.25), transparent 30%),
     linear-gradient(180deg, #0b0b14, #111827, #0a0a0a);
   color:white;
+}
+
+/* FADE IN */
+body{
+  animation:fadeIn 0.6s ease;
+}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 .container{
@@ -39,29 +48,32 @@ header h1{
   font-size:42px;
   margin-bottom:6px;
   color:#f8fafc;
+  letter-spacing:0.5px;
 }
 
-header p{
-  color:#cbd5e1;
-  font-size:14px;
-}
-
-/* NEW TAGLINE STYLE */
+/* MAIN TEXT */
 .hero-text{
-  font-size:14px;
+  font-size:15px;
   color:#cbd5e1;
   margin-top:10px;
 }
 
+/* HIGHLIGHT WORD */
+.highlight{
+  color:#6366f1;
+  font-weight:bold;
+}
+
+/* TAGLINE */
 .hero-sub{
   font-size:12px;
   color:#6b7280;
-  margin-top:4px;
-  letter-spacing:0.5px;
+  margin-top:5px;
+  letter-spacing:0.6px;
 }
 
 nav{
-  margin-top:16px;
+  margin-top:18px;
   display:flex;
   justify-content:center;
   gap:10px;
@@ -74,20 +86,26 @@ nav{
   background:#6366f133;
   color:white;
   cursor:pointer;
+  transition:0.3s;
+}
+
+.tab:hover{
+  background:#6366f166;
 }
 
 .tab.active{
   background:#6366f1;
 }
 
+/* SECTION */
 .section{
   display:none;
 }
-
 .section.active{
   display:block;
 }
 
+/* TITLE */
 .section-title{
   text-align:center;
   color:#a5b4fc;
@@ -95,6 +113,7 @@ nav{
   font-size:28px;
 }
 
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -104,29 +123,45 @@ nav{
   padding:20px 0;
 }
 
+/* CARD */
 .card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
   padding:12px;
   border-radius:16px;
+  transition:0.3s;
 }
 
+/* HOVER EFFECT */
+.card:hover{
+  transform:translateY(-4px);
+  border-color:#6366f1;
+}
+
+/* IMAGE BOX */
 .media-box{
   width:100%;
   height:190px;
   background:black;
   border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  overflow:hidden;
 }
 
+/* IMAGE ZOOM */
 .card img{
   width:100%;
   height:100%;
   object-fit:contain;
+  transition:0.4s;
   cursor:pointer;
 }
 
+.card:hover img{
+  transform:scale(1.05);
+}
+
+/* VIDEO */
 .video-card video{
   width:100%;
   height:100%;
@@ -134,9 +169,10 @@ nav{
   border-radius:12px;
 }
 
+/* TEXT */
 .title{
   text-align:center;
-  margin-top:11px;
+  margin-top:12px;
   font-size:15px;
   font-weight:bold;
 }
@@ -147,6 +183,7 @@ nav{
   color:#6b7280;
 }
 
+/* CONTACT */
 .contact{
   text-align:center;
   margin-top:20px;
@@ -163,10 +200,10 @@ nav{
 }
 
 .contact a{
-  color:#a5b4fc;
-  text-decoration:none;
+  color:#6366f1;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   margin-top:20px;
@@ -174,6 +211,7 @@ footer{
   font-size:13px;
 }
 
+/* POPUP */
 .popup{
   display:none;
   position:fixed;
@@ -192,6 +230,7 @@ footer{
   max-height:80%;
 }
 
+/* MOBILE */
 @media(max-width:700px){
   .grid{
     grid-template-columns:1fr;
@@ -205,11 +244,10 @@ footer{
 
 <header>
   <h1>HR Edits</h1>
-  <p>Creative Poster & Video Designer</p>
 
-  <!-- UPDATED TEXT -->
   <p class="hero-text">
-    I design posters and video edits that help brands stand out and grab attention.
+    I design posters and video edits that help brands 
+    <span class="highlight">stand out</span> and grab attention.
   </p>
 
   <p class="hero-sub">
